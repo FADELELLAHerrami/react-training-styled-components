@@ -1,29 +1,24 @@
 import styled from "styled-components";
-import Button from './button.jsx'
-
+import Section from './section.jsx'
 
 const Title = styled.h1`
-    color: red
+    color: #ab5412
 `
 
-const Section = styled.div`
-    background-color: #f0d1aa;
-    display: flex;
-    justify-content: center;
-    color: #f0aeaa;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-`
+
 
 
 export default function Content(){
     return(
-    <Section className="content">
-        <Title>content</Title>
-        <Button content="btn-1" />
-        <Button content="btn-1" />
-    </Section>
+    <>
+        <Title>Progress Tracker</Title>
+        <Section text="M"></Section>
+        <Section text="T"></Section>
+        <Section text="W"></Section>
+        <Section text="Tr"></Section>
+        <Section text="F"></Section>
+        <Section text="S"></Section>
+        <Section text="Sn"></Section>
+    </>
     )
 }
