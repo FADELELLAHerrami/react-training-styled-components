@@ -8,6 +8,10 @@ const TitleWeekday = styled.div`
     width: 50px;
     border-right: solid 3px lightgrey;
 `
+const TitleWeekend = styled(TitleWeekday)`
+    background-color: lightgrey;
+    border-radius: 7px 0 0 7px;
+`
 
 const Section = styled.div`
     background-color: #ffffff;
@@ -21,12 +25,26 @@ const Section = styled.div`
     font-size: 40px;
     color: #ff6961;
 `
+const ProgressBar = styled.div`
+    background-color: red;
+    width: ${({width})=> width || "0%"};
+    height: 100%;
+`
+
+const ProgressSection = styled.div`
+    width: 250px;
+`
 
 export default function Button(props){
+    const isWeekend = props.text == 'S'
     return(
     <>
-         <Section>
-            <TitleWeekday>{props.text}</TitleWeekday>
+         <Section >
+            {!isWeekend && <TitleWeekday>{props.text}</TitleWeekday>}
+            {isWeekend && <TitleWeekend>{props.text}</TitleWeekend>}
+            <ProgressSection>
+                <ProgressBar width={props.width}/>
+            </ProgressSection>
         </Section>
     </>
     )
