@@ -31,7 +31,6 @@ const Section = styled.div`
 const ProgressBar = styled.div`
     background-color: ${({width})=>{
         let numeric = parseInt(width.slice(0,-1));
-        console.log(numeric);
         if (numeric >= 80) return 'red';
         else if (numeric >= 60) return 'orange';
         else if (numeric >= 40) return 'yellow';
@@ -47,14 +46,18 @@ const ProgressSection = styled.div`
 `
 
 export default function Button(props){
-    const isWeekend = props.text == 'S'
+    const isWeekend = props.text == 'S';
+    let day = props.day;
+    let today = new Date()
+    let dayOfTheWeek = today.getDay()
+    let isToday = day === dayOfTheWeek+1;
     return(
     <>
          <Section >
             {!isWeekend && <TitleWeekday>{props.text}</TitleWeekday>}
             {isWeekend && <TitleWeekend>{props.text}</TitleWeekend>}
             <ProgressSection>
-                <ProgressBar width={props.width}/>
+                {isToday && <ProgressBar width={props.width}/>}
             </ProgressSection>
         </Section>
     </>

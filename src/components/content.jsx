@@ -38,13 +38,13 @@ export default function Content(){
         <Title>Progress Tracker</Title>
         {/* <SubTitle as={ReverseSubTitle} primary> I'm sub-Title </SubTitle> */}
         <SubTitle primary={'yellow'} border={'3px solid green'}> I'm sub-Title </SubTitle>
-        <Section text="M" width="80%"></Section>
-        <Section text="T" width="10%"></Section>
-        <Section text="W" width="87%"></Section>
-        <Section text="Tr" width="55%"></Section>
-        <Section text="F" width="32%"></Section>
-        <Section text="S" width="77%"></Section>
-        <Section text="S" width="46%"></Section>
+        <Section text="M" width="80%" day={1}></Section>
+        <Section text="T" width="10%" day={2}></Section>
+        <Section text="W" width="87%" day={3}></Section>
+        <Section text="Tr" width="55%" day={4}></Section>
+        <Section text="F" width="32%" day={5}></Section>
+        <Section text="S" width="77%" day={6}></Section>
+        <Section text="S" width="46%" day={7}></Section>
             <Rotate />
     </>
     )
