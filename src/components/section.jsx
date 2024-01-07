@@ -24,9 +24,20 @@ const Section = styled.div`
     justify-content: left;
     font-size: 40px;
     color: #ff6961;
+    &:hover {
+        background-color: grey
+    }
 `
 const ProgressBar = styled.div`
-    background-color: red;
+    background-color: ${({width})=>{
+        let numeric = parseInt(width.slice(0,-1));
+        console.log(numeric);
+        if (numeric >= 80) return 'red';
+        else if (numeric >= 60) return 'orange';
+        else if (numeric >= 40) return 'yellow';
+        else return 'green';
+
+        }};
     width: ${({width})=> width || "0%"};
     height: 100%;
 `
